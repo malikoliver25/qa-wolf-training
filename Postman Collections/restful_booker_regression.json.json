@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "b4af491b-05ed-44bc-bb19-fcb8dbf82040",
+		"name": "Restful-Booker-Regression-Suite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Room Image - 404 Verification",
+			"id": "285a2d05-7810-4931-a0ac-bd1ab1ea8afe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ReqRes User - Auth Verification",
+			"id": "bd4c9c1e-239d-40be-8176-0eac603d7826",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://reqres.in/api/users/2](https://reqres.in/api/users/2",
+				"description": "While performing a connectivity check on the ReqRes mock API (/api/users/2), the server returned a 401 Unauthorized response instead of the expected user data.\n\nUpon inspection of the response body, it was discovered that the API provider has implemented a new mandatory authentication requirement. The endpoint now requires a valid x-api-key header to be present in the request. This is currently blocking our login mockups and local development environments.\n\nTechnical Note: Confirmed that adding a placeholder x-api-key allows the request to pass, indicating this is a configuration change rather than a service outage."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Trivia Questions - Hard Mode",
+			"id": "42a5e965-b30c-4dc5-b8dd-4a3e5bedd3e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opentdb.com/api.php?amount=5&category=9&difficulty=hard&type=multiple",
+					"protocol": "https",
+					"host": [
+						"opentdb",
+						"com"
+					],
+					"path": [
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "5"
+						},
+						{
+							"key": "category",
+							"value": "9"
+						},
+						{
+							"key": "difficulty",
+							"value": "hard"
+						},
+						{
+							"key": "type",
+							"value": "multiple"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create User - Validation Check",
+			"id": "5c05218b-4a78-4b54-8d77-b270d1a1fa67",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"Malik\",\n\"job\": \"QA Specialist\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		}
+	]
+}
